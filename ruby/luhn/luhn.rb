@@ -9,25 +9,27 @@ require 'pry'
 
 class Luhn
 
-  def valid?(input)
+  def self.valid?(input)
     return false unless valid_string(input)
   end
 
-  def valid_string(input)
+  def self.valid_string(input)
+    binding.pry
     input.to_i if (input.length > 1 && input != /\D/)
   end
 
 
-  def double_number(input)
+  def self.double_number(input)
     numbers = input.reverse
+    binding.pry
   end
 
-  def divisivel_by_10?(input)
+  def self.divisivel_by_10?(input)
     return if input % 10 == 0
   end
   
 
-  def sum_number(input)
+  def self.sum_number(input)
     input.slice(2).sum do |a, b = 0|
       a + double_number(b)
     end
